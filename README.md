@@ -1,7 +1,6 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
-
-// contentful install
+-contentful install
 npm install contentful
 
-/start
+-start
 yarn dev

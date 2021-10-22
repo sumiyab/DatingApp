@@ -6,13 +6,18 @@ import { fetchEntries } from '../lib/contentfulApi'
 
 export default function Home({posts}) {
   
+    
+  
+  
   return (
     <div className="container">
-      <div>{posts.map((p)=>{
-        return(
-          <p key=''>{p.title}</p>
-        )
-      })}</div>
+      <div>
+        {posts.map((p)=>{
+          return(
+            <p key=''>{p.title}</p>
+          )
+        })}
+      </div>
       
       <h1 className="title">
         Read{' '}
@@ -186,7 +191,7 @@ export default function Home({posts}) {
     </div>
   )
 }
-//this function  call query
+//this function will create quer
 export async function getStaticProps() {
   const res = await fetchEntries()
   const posts = await res.map((p) => {
