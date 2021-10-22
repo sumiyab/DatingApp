@@ -11,11 +11,13 @@ export default function Home({posts}) {
   
   return (
     <div className="container">
-      <div>{posts.map((p)=>{
-        return(
-          <p key=''>{p.title}</p>
-        )
-      })}</div>
+      <div>
+        {posts.map((p)=>{
+          return(
+            <p key=''>{p.title}</p>
+          )
+        })}
+      </div>
       
       <h1 className="title">
         Read{' '}
