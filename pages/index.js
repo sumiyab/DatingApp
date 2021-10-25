@@ -15,11 +15,11 @@ import Card from "../component/Card";
 export default function Home({ posts }) {
   const dataForArticle = posts.filter((post) => post.category == "article");
   const dataForCard = posts.filter((post) => post.category == "card");
-  console.log("datacard:", dataForCard);
+  const dataForBanner = posts.filter((post) => post.category == "banner");
   return (
     <div>
       <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants", "Gift"]} />
-      <AutoCarousel />
+      <AutoCarousel bannerData={dataForBanner} />
       <div class="min-h-screen flex justify-center items-center py-20">
         <div class="container mx-auto p-12 bg-gray-100 rounded-xl">
           <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
