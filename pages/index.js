@@ -2,6 +2,8 @@ import Head from 'next/head'
 
 import Link from 'next/link'
 import { fetchEntries } from '../lib/contentfulApi'
+import Article from '../component/article'
+import SuggestCard from '../component/card'
 
 
 export default function Home({posts}) {
@@ -13,30 +15,9 @@ export default function Home({posts}) {
           <p key=''>{p.title}</p>
         )
       })}</div>
-      
-      <h1 className="title">
-        Read{' '}
-        <Link href="/posts/first-post">
-          <a>this page!</a>
-        </Link>
-      </h1>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+      <Article></Article>
+      <Article></Article>
+      <SuggestCard/>
 
       <style jsx>{`
         .container {
@@ -44,7 +25,6 @@ export default function Home({posts}) {
           padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
-          justify-content: center;
           align-items: center;
         }
 
