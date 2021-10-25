@@ -38,10 +38,10 @@ const CardList = (props) => {
   };
 
   return (
-    <div className="w-full py-6 ">
+    <div className="w-full px-20 ">
       <div>
         <div className="swiper">
-          <div className="swiper-wrapper mx-16">
+          <div className="swiper-wrapper">
             {props.listData.map((el) => {
               return (
                 <div key={el.title} className="swiper-slide">
