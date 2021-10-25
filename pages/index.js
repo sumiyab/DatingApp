@@ -18,12 +18,7 @@ export default function Home({ posts }) {
   console.log("datacard:", dataForCard);
   return (
     <div>
-      <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants"]} />
-      <div>
-        {posts.map((p) => {
-          return <p key="">{p.title}</p>;
-        })}
-      </div>
+      <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants", "Gift"]} />
       <AutoCarousel />
       <div class="min-h-screen flex justify-center items-center py-20">
         <div class="container mx-auto p-12 bg-gray-100 rounded-xl">
