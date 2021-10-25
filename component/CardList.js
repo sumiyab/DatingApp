@@ -48,7 +48,7 @@ const CardList = (props) => {
                   key={el.title}
                   className="swiper-slide transform transition duration-500 hover:scale-105"
                 >
-                  <Card />
+                  <Card title={el.title} url={el.image?.fields?.file?.url} />
                 </div>
               );
             })}
