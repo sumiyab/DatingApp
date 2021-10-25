@@ -14,7 +14,8 @@ import Card from "../component/Card";
 
 export default function Home({ posts }) {
   const dataForArticle = posts.filter((post) => post.category == "article");
-
+  const dataForCard = posts.filter((post) => post.category == "card");
+  console.log("datacard:", dataForCard);
   return (
     <div>
       <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants"]} />
@@ -34,19 +35,20 @@ export default function Home({ posts }) {
         </div>
       </div>
       <CardList
-        listData={[
-          { img: "", title: "0", rate: 3 },
-          { img: "", title: "1", rate: 3 },
-          { img: "", title: "2", rate: 3 },
-          { img: "", title: "3", rate: 3 },
-          { img: "", title: "4", rate: 3 },
-          { img: "", title: "5", rate: 3 },
-          { img: "", title: "6", rate: 3 },
-          { img: "", title: "7", rate: 3 },
-          { img: "", title: "8", rate: 3 },
-          { img: "", title: "9", rate: 3 },
-          { img: "", title: "10", rate: 3 },
-        ]}
+        listData={dataForCard}
+        // listData={[
+        //   { img: "", title: "0", rate: 3 },
+        //   { img: "", title: "1", rate: 3 },
+        //   { img: "", title: "2", rate: 3 },
+        //   { img: "", title: "3", rate: 3 },
+        //   { img: "", title: "4", rate: 3 },
+        //   { img: "", title: "5", rate: 3 },
+        //   { img: "", title: "6", rate: 3 },
+        //   { img: "", title: "7", rate: 3 },
+        //   { img: "", title: "8", rate: 3 },
+        //   { img: "", title: "9", rate: 3 },
+        //   { img: "", title: "10", rate: 3 },
+        // ]}
       />
     </div>
   );
