@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./card";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import { useEffect } from "react";
@@ -44,7 +44,10 @@ const CardList = (props) => {
           <div className="swiper-wrapper">
             {props.listData.map((el) => {
               return (
-                <div key={el.title} className="swiper-slide">
+                <div
+                  key={el.title}
+                  className="swiper-slide transform transition duration-500 hover:scale-105"
+                >
                   <Card />
                 </div>
               );
