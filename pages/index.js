@@ -1,23 +1,40 @@
 import Head from "next/head";
 
-import Link from 'next/link'
-import { fetchEntries } from '../lib/contentfulApi'
-import Article from '../component/article'
-import SuggestCard from '../component/card'
+import Link from "next/link";
+import { fetchEntries } from "../lib/contentfulApi";
+import Article from "../component/article";
+import SuggestCard from "../component/card";
 
 import "tailwindcss/tailwind.css";
 import "antd/dist/antd.css";
 import CardList from "../component/CardList";
 import Toolbar from "../component/Toolbar";
 import AutoCarousel from "../component/AutoCarousel";
-import Card  from "../component/Card";
-
+import Card from "../component/Card";
 
 export default function Home({ posts }) {
-  return <div>
-    <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants"]} />
-    <AutoCarousel/>
-    <CardList listData={[
+  const dataForArticle = posts.filter((post) => post.category == "article");
+
+  return (
+    <div>
+      <Toolbar tagsData={["Bars", "Pubs", "Clubs", "Restaurants"]} />
+      <div>
+        {posts.map((p) => {
+          return <p key="">{p.title}</p>;
+        })}
+      </div>
+      <AutoCarousel />
+      <div class="min-h-screen flex justify-center items-center py-20">
+        <div class="container mx-auto p-12 bg-gray-100 rounded-xl">
+          <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
+            {dataForArticle?.map((p) => {
+              return <Article data={p} />;
+            })}
+          </div>
+        </div>
+      </div>
+      <CardList
+        listData={[
           { img: "", title: "0", rate: 3 },
           { img: "", title: "1", rate: 3 },
           { img: "", title: "2", rate: 3 },
@@ -29,9 +46,10 @@ export default function Home({ posts }) {
           { img: "", title: "8", rate: 3 },
           { img: "", title: "9", rate: 3 },
           { img: "", title: "10", rate: 3 },
-        ]}/>
-        
-  </div>
+        ]}
+      />
+    </div>
+  );
 }
 // export default function Home({ posts }) {
 //   return (
